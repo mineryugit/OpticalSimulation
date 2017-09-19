@@ -3,6 +3,7 @@
 #include <GL/glut.h>
 #include "Mouse.h"
 #include "OBJLoader.h"
+#include "XMLLoader.h"
 using namespace std;
 
 int WindowPositionX = 100;
@@ -13,13 +14,15 @@ char WindowTitle[] = "Display OBJ file";
 GLfloat lightColor[4] = { 1.0, 1.0, 1.0, 1.0 };
 GLfloat lightPosition[4] = { 0.0, 100.0, 0.0, 0.0 };
 ViewCamera camera(5.0);
-OBJMesh mesh;
-bool wireframe_flag = false;
+Projector proj; //projectorのパラメタ
+OBJMesh mesh; //targetのmesh
+OBJMesh optmesh; //targetのmesh
+bool wireframe_flag = true;
 
 //
 //　prototype
 //
-void Initialize();
+void Initialize(char* object_filename, char* optics_filename, char* projector_param);
 void Display();
 void Idle();
 void Shutdown();
@@ -38,11 +41,9 @@ void SetLighting();
 int main(int argc, char *argv[])
 {
 	if (argc != 3){
-		std::cout << "Usage: <projection surface (.obj)> <optical path(.bin)>" << std::endl;
+		std::cout << "Usage: <projection surface (.obj)> <optical path(.bin)> <projector paramerter(.xml)>" << std::endl;
 		//return 0;
 	}
-
-	std::cout << argc << endl;
 	glutInit(&argc, argv);
 	glutInitWindowPosition(WindowPositionX, WindowPositionY);
 	glutInitWindowSize(WindowWidth, WindowHeight);
@@ -57,7 +58,7 @@ int main(int argc, char *argv[])
 	glutKeyboardFunc(Keyboard);
 	glutSpecialFunc(Special);
 
-	Initialize(argv[1]);
+	Initialize(argv[1], argv[2], argv[3]);
 
 	glutMainLoop();
 
@@ -83,7 +84,7 @@ void SetLighting()
 //　　Initialize
 //　　Desc : 初期化処理
 //----------------------------------------------------------------------------------------------------
-void Initialize(char* filename)
+void Initialize(char* object_filename, char* optics_filename, char* projector_param)
 {
 	//　塗りつぶし色
 	glClearColor(0.3, 0.3, 1.0, 1.0);
@@ -98,10 +99,13 @@ void Initialize(char* filename)
 	SetLighting();
 
 	//　メッシュファイルの読み込み(sample:"./../../data/model/dosei.obj")
-	mesh.Load(filename);
+	mesh.Load(object_filename);
 
 	//　メッシュファイルの情報を表示
 	mesh.Information();
+
+	::proj.set(projector_param);
+	std::cout << ::proj.pixel_h << std::endl;
 }
 
 //---------------------------------------------------------------------------------------------------
@@ -151,21 +155,13 @@ void Display()
 	SetLighting();
 
 	//　メッシュを描画
-	//if (wireframe_flag) glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	if (wireframe_flag) glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	mesh.Render(1.0);
-	if (wireframe_flag) glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	//if (wireframe_flag) glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 	///
 	glPopMatrix();
-
-	/*
-	//　補助軸の描画
-	glPushMatrix();
-	camera.RenderSubAxis(WindowWidth, WindowHeight);
-	glPopMatrix();
-	*/
-
-
+	
 	//　ダブルバッファ
 	glutSwapBuffers();
 }
