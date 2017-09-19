@@ -1,11 +1,11 @@
-#ifndef _LINE_H_INCLUDED_
+Ôªø#ifndef _LINE_H_INCLUDED_
 #define _LINE_H_INCLUDED_
 
-//Å@Disable Warning C4996
+//„ÄÄDisable Warning C4996
 #pragma warning(disable : 4996)
 
 //
-//Å@include
+//„ÄÄinclude
 //
 #include <iostream>
 #include <GL/glut.h>
@@ -14,7 +14,7 @@ using namespace std;
 
 
 /////////////////////////////////////////////////////////////////////////
-//Å@Å@optline class
+//„ÄÄ„ÄÄoptline class
 /////////////////////////////////////////////////////////////////////////
 class OPTLIne
 {
@@ -22,4 +22,4 @@ private:
 	std::vector<vector<vector<float>>> op;
 };
 
-#endif	//Å@_OBJ_LOADER_H_INCLUDED_
+#endif	//„ÄÄ_OBJ_LOADER_H_INCLUDED_

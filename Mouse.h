@@ -1,4 +1,4 @@
-/***************************************************************************
+Ôªø/***************************************************************************
 		Mouse.h
 
 		Mouse Function Library
@@ -12,14 +12,14 @@
 #define _MOUSE_H_INCLUDED_
 
 //
-//Å@include
+//„ÄÄinclude
 //
 #include <iostream>
 using namespace std;
 
 
 //
-//Å@global
+//„ÄÄglobal
 //
 const double PI = 3.14159265358979323846264338327;
 template<class T> static inline T RadToDeg(T rad) { return ( (rad)*(180.0/PI) ); }
@@ -27,7 +27,7 @@ template<class T> static inline T DegToRad(T deg) { return ( (deg)*(PI/180.0) );
 typedef enum MState	{ Push, Release, None };
 
 //////////////////////////////////////////////////////////////////////////
-//Å@Å@MPosition class
+//„ÄÄ„ÄÄMPosition class
 //////////////////////////////////////////////////////////////////////////
 class MPosition
 {
@@ -43,7 +43,7 @@ public:
 
 
 //////////////////////////////////////////////////////////////////////////
-//Å@Å@MouseButton class
+//„ÄÄ„ÄÄMouseButton class
 //////////////////////////////////////////////////////////////////////////
 class MouseButton
 {
@@ -60,7 +60,7 @@ public:
 };
 
 //////////////////////////////////////////////////////////////////////////
-//Å@Å@ViewCamara class
+//„ÄÄ„ÄÄViewCamara class
 //////////////////////////////////////////////////////////////////////////
 class ViewCamera
 {
@@ -87,4 +87,4 @@ public:
 
 
 
-#endif		//Å@_MOUSE_WIN_H_INCLUDED_
+#endif		//„ÄÄ_MOUSE_WIN_H_INCLUDED_

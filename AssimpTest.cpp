@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <string>
 using namespace std;
 #include <assimp/Importer.hpp>      // C++ importer interface
@@ -9,7 +9,7 @@ using namespace std;
 //const string INPUTFILE = "../../data/model/bunny/reconstruction/bun_zipper_res3.ply";
 const string INPUTFILE = "bun_zipper_res4.ply";
 
-//assipm‚Í’¼’u‚«
+//assipmã¯ç›´ç½®ã
 
 void main(){
 	Assimp::Importer importer;
@@ -22,8 +22,8 @@ void main(){
 	printf("have born?%d\n", assimp_mesh->HasBones());
 	printf("%d\n", assimp_mesh->HasFaces());
 	printf("%d\n", assimp_mesh->mNumFaces);
-	printf("%d\n", assimp_mesh->mFaces[0].mNumIndices);//3ŠpŒn‚È‚ç0,1,2..‚Æ‚È‚Á‚Ä‚¢‚é
+	printf("%d\n", assimp_mesh->mFaces[0].mNumIndices);//3è§’ç³»ãªã‚‰0,1,2..ã¨ãªã£ã¦ã„ã‚‹
 	printf("normal:%d\n", assimp_mesh->HasNormals());
 	printf("%d\n", assimp_mesh->HasPositions());
-	printf("%d\n", assimp_mesh->mNumVertices);//€3‚µ‚Ä’š“x‚İ‚½‚¢‚¾B
+	printf("%d\n", assimp_mesh->mNumVertices);//Ã·3ã—ã¦ä¸åº¦ã¿ãŸã„ã ã€‚
 }

@@ -1,21 +1,21 @@
-/************************************************************************
-Å@Å@OBJLoader.h
+Ôªø/************************************************************************
+„ÄÄ„ÄÄOBJLoader.h
 
-Å@Å@Alias Wavefront OBJ File Loader
+„ÄÄ„ÄÄAlias Wavefront OBJ File Loader
 
-Å@Å@Date : Nov. 18, 2007
-Å@Å@Version : 1.0
-Å@Å@Author : Pocol
+„ÄÄ„ÄÄDate : Nov. 18, 2007
+„ÄÄ„ÄÄVersion : 1.0
+„ÄÄ„ÄÄAuthor : Pocol
 *************************************************************************/
 
 #ifndef _OBJ_LOADER_H_INCLUDED_
 #define _OBJ_LOADER_H_INCLUDED_
 
-//Å@Disable Warning C4996
+//„ÄÄDisable Warning C4996
 #pragma warning(disable : 4996)
 
 //
-//Å@include
+//„ÄÄinclude
 //
 #include <iostream>
 #include <GL/glut.h>
@@ -23,7 +23,7 @@ using namespace std;
 
 
 //
-//Å@define
+//„ÄÄdefine
 //
 #define OBJ_BUFFER_LENGTH 1024
 #define OBJ_NAME_LENGTH 256
@@ -32,7 +32,7 @@ extern int count_suru;
 
 
 /////////////////////////////////////////////////////////////////////////
-//Å@Å@OBJVertex class
+//„ÄÄ„ÄÄOBJVertex class
 /////////////////////////////////////////////////////////////////////////
 class OBJVertex
 {
@@ -47,7 +47,7 @@ public:
 };
 
 /////////////////////////////////////////////////////////////////////////
-//Å@Å@OBJColor class
+//„ÄÄ„ÄÄOBJColor class
 /////////////////////////////////////////////////////////////////////////
 class OBJColor
 {
@@ -62,7 +62,7 @@ public:
 };
 
 ////////////////////////////////////////////////////////////////////////
-//Å@Å@OBJFace class
+//„ÄÄ„ÄÄOBJFace class
 ////////////////////////////////////////////////////////////////////////
 class OBJFace
 {
@@ -102,7 +102,7 @@ public:
 };
 /*
 ////////////////////////////////////////////////////////////////////////
-//Å@Å@OBJMaterial
+//„ÄÄ„ÄÄOBJMaterial
 ////////////////////////////////////////////////////////////////////////
 class OBJMaterial
 {
@@ -142,7 +142,7 @@ public:
 };
 */
 ////////////////////////////////////////////////////////////////////////
-//Å@Å@OBJMesh
+//„ÄÄ„ÄÄOBJMesh
 ////////////////////////////////////////////////////////////////////////
 class OBJMesh
 {
@@ -183,4 +183,4 @@ public:
 	void Information();
 };
 
-#endif	//Å@_OBJ_LOADER_H_INCLUDED_
+#endif	//„ÄÄ_OBJ_LOADER_H_INCLUDED_

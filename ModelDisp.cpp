@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <miffy/gl/glutility.h>
 #include <GL/freeglut.h>
 #include <string>
@@ -9,7 +9,7 @@
 #include <assert.h>
 #define _USE_MATH_DEFINES 
 
-#include <math.h>//ƒNƒH[ƒ^ƒjƒIƒ“‚É•K—v
+#include <math.h>//ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã«å¿…è¦
 #include <miffy/math/vec3.h>
 #include <miffy/math/matrix.h>
 #include <miffy/math/quaternion.h>
@@ -25,7 +25,7 @@ using namespace std;
 bool quaternionflag = false;
 const int WINWIDTH = 600;
 const int WINHEIGHT = 600;
-float background[3] = { 0.0, 0.0, 0.0 };//”wŒiF
+float background[3] = { 0.0, 0.0, 0.0 };//èƒŒæ™¯è‰²
 float myrotate[3] = { 0.0, 0.0, 0.0 };
 float translate_speed = 0.01;
 float zoom_speed = 0.2;
@@ -36,19 +36,19 @@ int previous_x;
 int previous_y;
 int mouse_down[2];
 
-//‰ñ“]ƒ}ƒgƒŠƒbƒNƒX
+//å›è»¢ãƒãƒˆãƒªãƒƒã‚¯ã‚¹
 miffy::mat4<float> rotate;
 
-//•½sˆÚ“®
-float trans[3] = { 0, 0, -4.0 };//Å‰‚ÌƒY[ƒ€ˆÊ’u‚ğŒˆ‚ß‚é
+//å¹³è¡Œç§»å‹•
+float trans[3] = { 0, 0, -4.0 };//æœ€åˆã®ã‚ºãƒ¼ãƒ ä½ç½®ã‚’æ±ºã‚ã‚‹
 float area = 1.0;
 float offset = -0.5;
 float offsetz = 10;
-float aspectratio = 1.0;//y/xƒf[ƒ^‚Ìc‰¡”ä
+float aspectratio = 1.0;//y/xãƒ‡ãƒ¼ã‚¿ã®ç¸¦æ¨ªæ¯”
 const string INPUTFILE = "bun_zipper_res4.ply";
 
-//debugî•ñ
-//‰ñ“]s—ñ
+//debugæƒ…å ±
+//å›è»¢è¡Œåˆ—
 miffy::mat4<float> rotation_matrix;
 aiMesh* assimp_mesh;
 aiVector3D* assimp_verts;
@@ -66,10 +66,10 @@ void InitGeometry(){
 	printf("have born?%d\n", assimp_mesh->HasBones());
 	printf("%d\n", assimp_mesh->HasFaces());
 	printf("%d\n", assimp_mesh->mNumFaces);
-	printf("%d\n", assimp_mesh->mFaces[0].mNumIndices);//3ŠpŒn‚È‚ç0,1,2..‚Æ‚È‚Á‚Ä‚¢‚é
+	printf("%d\n", assimp_mesh->mFaces[0].mNumIndices);//3è§’ç³»ãªã‚‰0,1,2..ã¨ãªã£ã¦ã„ã‚‹
 	printf("normal:%d\n", assimp_mesh->HasNormals());
 	printf("%d\n", assimp_mesh->HasPositions());
-	printf("%d\n", assimp_mesh->mNumVertices);//€3‚µ‚Ä’š“x‚İ‚½‚¢‚¾B
+	printf("%d\n", assimp_mesh->mNumVertices);//Ã·3ã—ã¦ä¸åº¦ã¿ãŸã„ã ã€‚
 	assimp_verts = assimp_mesh->mVertices;
 
 }
@@ -83,7 +83,7 @@ void idle(){
 }
 void reshape(int w, int h)
 {
-	//Ë‰e•ÏŠ·s—ñ
+	//å°„å½±å¤‰æ›è¡Œåˆ—
 	glViewport(0, 0, (GLsizei)w, (GLsizei)h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -102,10 +102,10 @@ void display(void)
 	glEnable(GL_DEPTH_TEST);
 
 	glLoadIdentity();/* clear the matrix */
-	gluLookAt(eyePoint[0], eyePoint[1], eyePoint[2], 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);//z‚ªã‚Å‚ ‚é‚ªA‚»‚¤‚·‚é‚Ì‚ª“ï‚µ‚¢B
+	gluLookAt(eyePoint[0], eyePoint[1], eyePoint[2], 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);//zãŒä¸Šã§ã‚ã‚‹ãŒã€ãã†ã™ã‚‹ã®ãŒé›£ã—ã„ã€‚
 	glPushMatrix();
-	glTranslatef(trans[0], trans[1], trans[2]);//•½sˆÚ“®
-	glMultMatrixf(rotation_matrix.m);//ƒNƒH[ƒ^ƒjƒIƒ“‚É‚æ‚é‰ñ“]
+	glTranslatef(trans[0], trans[1], trans[2]);//å¹³è¡Œç§»å‹•
+	glMultMatrixf(rotation_matrix.m);//ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã«ã‚ˆã‚‹å›è»¢
 	// DrawCoordinate(0.5);
 
 	glColor3d(1.0, 1.0, 1.0);
@@ -154,7 +154,7 @@ void wheel(int button, int direction, int x, int y)
 }
 void mouse(int button, int state, int x, int y) {
 
-	if (button == GLUT_RIGHT_BUTTON){//•½sˆÚ“®
+	if (button == GLUT_RIGHT_BUTTON){//å¹³è¡Œç§»å‹•
 
 		quaternionflag = false;
 		if (state == GLUT_DOWN){
@@ -164,7 +164,7 @@ void mouse(int button, int state, int x, int y) {
 		}
 		else if (state == GLUT_UP){
 			trans[0] += translate_speed*(x - mouse_down[0]);
-			trans[1] += -translate_speed*(y - mouse_down[1]);//y‚Íã‰º‹t
+			trans[1] += -translate_speed*(y - mouse_down[1]);//yã¯ä¸Šä¸‹é€†
 			//printf("up:%d,%d\n",x,y);
 		}
 
@@ -173,10 +173,10 @@ void mouse(int button, int state, int x, int y) {
 	if (button == GLUT_LEFT_BUTTON){
 		quaternionflag = true;
 		switch (state){
-		case GLUT_DOWN://Quaternion:ƒ}ƒEƒXƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½ˆÊ’u‚ğ‹L‰¯ 
+		case GLUT_DOWN://Quaternion:ãƒã‚¦ã‚¹ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸä½ç½®ã‚’è¨˜æ†¶ 
 			previous_x = x;
 			previous_y = y;
-		case GLUT_UP://Quaternion:p¨‚ğ•Û‘¶
+		case GLUT_UP://Quaternion:å§¿å‹¢ã‚’ä¿å­˜
 			current_quaternion = target_quaternion;
 
 			break;
@@ -192,26 +192,26 @@ void mouse(int button, int state, int x, int y) {
 void move(int x, int y)
 {
 	if (quaternionflag){
-		//ˆÚ“®—Ê‚ğŒvZ ‰æ–Ê‚Ì’†‚Å‰½“‚®‚ç‚¢“®‚¢‚½‚©H
+		//ç§»å‹•é‡ã‚’è¨ˆç®— ç”»é¢ã®ä¸­ã§ä½•ï¼…ãã‚‰ã„å‹•ã„ãŸã‹ï¼Ÿ
 		float dx = (x - previous_x) * 1.0 / WINWIDTH;
 		float dy = (y - previous_y) * 1.0 / WINHEIGHT;
 
-		//ƒNƒH[ƒ^ƒjƒIƒ“‚Ì’·‚³
+		//ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã®é•·ã•
 		float length = sqrt(dx * dx + dy * dy);
 
 		if (length != 0.0) {
-			//M_PI‚Í“K“–‚ÈŠ·ZŒW”@pi‚É‚µ‚Ä‚¨‚­‚ÆA‰æ–Ê‚¢‚Á‚Ï‚¢“®‚©‚µ‚½‚É‚¿‚å‚¤‚Çˆê‰ñ“]‚É‚È‚é
+			//M_PIã¯é©å½“ãªæ›ç®—ä¿‚æ•°ã€€piã«ã—ã¦ãŠãã¨ã€ç”»é¢ã„ã£ã±ã„å‹•ã‹ã—ãŸæ™‚ã«ã¡ã‚‡ã†ã©ä¸€å›è»¢ã«ãªã‚‹
 			float radian = length * M_PI;
 			float theta = sin(radian) / length;
-			miffy::quat<float> after(cos(radian), dy * theta, dx * theta, 0.0);//‰ñ“]Œã‚Ìp¨
+			miffy::quat<float> after(cos(radian), dy * theta, dx * theta, 0.0);//å›è»¢å¾Œã®å§¿å‹¢
 			target_quaternion = after * current_quaternion;
 			target_quaternion.toMat4(rotation_matrix.m);
 
 		}
 	}
-	else{//•½sˆÚ“®
+	else{//å¹³è¡Œç§»å‹•
 		trans[0] += translate_speed*(x - mouse_down[0]);
-		trans[1] += -translate_speed*(y - mouse_down[1]);//y‚Íã‰º‹t
+		trans[1] += -translate_speed*(y - mouse_down[1]);//yã¯ä¸Šä¸‹é€†
 		mouse_down[0] = x;
 		mouse_down[1] = y;
 	}
@@ -221,7 +221,7 @@ int main(int argc, char **argv)
 	printf("end");
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
-	//glutMainLoop‚©‚ç”²‚¯o‚µ‚Ä‚©‚ç‰½‚©•\¦‚·‚é‚½‚ß‚Ì‚à‚Ì
+	//glutMainLoopã‹ã‚‰æŠœã‘å‡ºã—ã¦ã‹ã‚‰ä½•ã‹è¡¨ç¤ºã™ã‚‹ãŸã‚ã®ã‚‚ã®
 	printf("end");
 	glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS);
 	glutInitWindowSize(WINWIDTH, WINHEIGHT);

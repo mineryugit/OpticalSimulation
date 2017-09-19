@@ -1,11 +1,11 @@
-#include <fstream>
+ï»¿#include <fstream>
 #include "OBJLoader.h"
 using namespace std;
 
 
 //--------------------------------------------------------------------------------------------------
-//@@GetDirectoryName
-//@@Desc : •¶š—ñ‚©‚çƒfƒBƒŒƒNƒgƒŠ‚ğæ“¾
+//ã€€ã€€GetDirectoryName
+//ã€€ã€€Desc : æ–‡å­—åˆ—ã‹ã‚‰ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’å–å¾—
 //--------------------------------------------------------------------------------------------------
 char * GetDirectoryName(const char *filename, char *dest)
 {
@@ -21,8 +21,8 @@ char * GetDirectoryName(const char *filename, char *dest)
 }
 
 //---------------------------------------------------------------------------------------------------
-//@@SetDirectory
-//@@Desc : dest‚Ì‘O‚ÉƒfƒBƒŒƒNƒgƒŠ‚ğ•t‰Á‚µC•¶š—ñ‚ğ•Ô‚·
+//ã€€ã€€SetDirectory
+//ã€€ã€€Desc : destã®å‰ã«ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’ä»˜åŠ ã—ï¼Œæ–‡å­—åˆ—ã‚’è¿”ã™
 //--------------------------------------------------------------------------------------------------
 char * SetDirectoryName(char *dest, char *directory)
 {
@@ -34,12 +34,12 @@ char * SetDirectoryName(char *dest, char *directory)
 }
 
 ////////////////////////////////////////////////////////////////////////
-//@@OBJMesh class
+//ã€€ã€€OBJMesh class
 ////////////////////////////////////////////////////////////////////////
 
 //-------------------------------------------------------------------------------------------------
-//@@OBJMesh
-//@@Desc : ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+//ã€€ã€€OBJMesh
+//ã€€ã€€Desc : ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 //-------------------------------------------------------------------------------------------------
 OBJMesh::OBJMesh()
 {
@@ -51,16 +51,16 @@ OBJMesh::OBJMesh()
 }
 
 //-------------------------------------------------------------------------------------------------
-//@@~OBJMesh
-//@@Desc : ƒfƒXƒgƒ‰ƒNƒ^
+//ã€€ã€€~OBJMesh
+//ã€€ã€€Desc : ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 //-------------------------------------------------------------------------------------------------
 OBJMesh::~OBJMesh()
 {
 }
 
 //-------------------------------------------------------------------------------------------------
-//@@Release
-//@@Desc : ƒƒ‚ƒŠ‚ğ‰ğ•ú
+//ã€€ã€€Release
+//ã€€ã€€Desc : ãƒ¡ãƒ¢ãƒªã‚’è§£æ”¾
 //-------------------------------------------------------------------------------------------------
 void OBJMesh::Release()
 {
@@ -98,8 +98,8 @@ void OBJMesh::Release()
 }
 
 //--------------------------------------------------------------------------------------------------
-//@@AddVertex
-//@@Desc : ’¸“_À•W‚ğ’Ç‰Á
+//ã€€ã€€AddVertex
+//ã€€ã€€Desc : é ‚ç‚¹åº§æ¨™ã‚’è¿½åŠ 
 //--------------------------------------------------------------------------------------------------
 void OBJMesh::AddVertex(OBJVertex &vert)
 {
@@ -109,8 +109,8 @@ void OBJMesh::AddVertex(OBJVertex &vert)
 }
 
 //-------------------------------------------------------------------------------------------------
-//@@AddNormal
-//@@Desc : –@üƒxƒNƒgƒ‹‚ğ’Ç‰Á
+//ã€€ã€€AddNormal
+//ã€€ã€€Desc : æ³•ç·šãƒ™ã‚¯ãƒˆãƒ«ã‚’è¿½åŠ 
 //-------------------------------------------------------------------------------------------------
 void OBJMesh::AddNormal(OBJVertex &norm)
 {
@@ -120,8 +120,8 @@ void OBJMesh::AddNormal(OBJVertex &norm)
 }
 
 //-------------------------------------------------------------------------------------------------
-//@@AddFace
-//@@Desc : –Ê‚ğ’Ç‰Á
+//ã€€ã€€AddFace
+//ã€€ã€€Desc : é¢ã‚’è¿½åŠ 
 //-------------------------------------------------------------------------------------------------
 void OBJMesh::AddFace(OBJFace &surf)
 {
@@ -131,8 +131,8 @@ void OBJMesh::AddFace(OBJFace &surf)
 }
 /*
 //-------------------------------------------------------------------------------------------------
-//@@AddMaterial
-//@@Desc : ƒ}ƒeƒŠƒAƒ‹‚ğ’Ç‰Á
+//ã€€ã€€AddMaterial
+//ã€€ã€€Desc : ãƒãƒ†ãƒªã‚¢ãƒ«ã‚’è¿½åŠ 
 //-------------------------------------------------------------------------------------------------
 void OBJMesh::AddMaterial(OBJMaterial &mat)
 {
@@ -143,23 +143,23 @@ void OBJMesh::AddMaterial(OBJMaterial &mat)
 */
 
 //-------------------------------------------------------------------------------------------------
-//@@Information
-//@@Desc : î•ñ‚ğ•\¦
+//ã€€ã€€Information
+//ã€€ã€€Desc : æƒ…å ±ã‚’è¡¨ç¤º
 //-------------------------------------------------------------------------------------------------
 void OBJMesh::Information()
 {
-	cout << "* OBJ filename:" << objFileName << endl;//OBJƒtƒ@ƒCƒ‹–¼
-	//cout << "* MTL filename" << mtlFileName << endl;//MTLƒtƒ@ƒCƒ‹–¼
-	cout << "* vertex:" << num_vertex << endl;//’¸“_”
-	cout << "* normal" << num_normal << endl;//–@ü”
-	cout << "* plane:" << num_face << endl;//–Ê”
-	//cout << "* material:" << num_material << endl;//Ş¿”
+	cout << "* OBJ filename:" << objFileName << endl;//OBJãƒ•ã‚¡ã‚¤ãƒ«å
+	//cout << "* MTL filename" << mtlFileName << endl;//MTLãƒ•ã‚¡ã‚¤ãƒ«å
+	cout << "* vertex:" << num_vertex << endl;//é ‚ç‚¹æ•°
+	cout << "* normal" << num_normal << endl;//æ³•ç·šæ•°
+	cout << "* plane:" << num_face << endl;//é¢æ•°
+	//cout << "* material:" << num_material << endl;//æè³ªæ•°
 	cout << endl;
 }
 
 //-------------------------------------------------------------------------------------------------
-//@@LoadOBJFile
-//@@Desc : OBJƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+//ã€€ã€€LoadOBJFile
+//ã€€ã€€Desc : OBJãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿
 //-------------------------------------------------------------------------------------------------
 bool OBJMesh::LoadOBJFile(const char *filename)
 {
@@ -172,19 +172,19 @@ bool OBJMesh::LoadOBJFile(const char *filename)
 	float max_size = 0.0;
 	bool size_flag = false;
 
-	//@ƒIƒuƒWƒFƒNƒgƒtƒ@ƒCƒ‹–¼‚ğƒRƒs[
+	//ã€€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒ•ã‚¡ã‚¤ãƒ«åã‚’ã‚³ãƒ”ãƒ¼
 	strcpy(objFileName, filename);
 
-	//@ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	//ã€€ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	file.open(filename, ios::in);
 	if (!file.is_open())
 	{
-		cout << "Error : w’è‚³‚ê‚½OBJƒtƒ@ƒCƒ‹‚ªŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½\n";
+		cout << "Error : æŒ‡å®šã•ã‚ŒãŸOBJãƒ•ã‚¡ã‚¤ãƒ«ãŒé–‹ã‘ã¾ã›ã‚“ã§ã—ãŸ\n";
 		cout << "File Name : " << filename << endl;
 		return false;
 	}
 
-	//@ƒtƒ@ƒCƒ‹‚Ì––’[‚Ü‚Åƒ‹[ƒv
+	//ã€€ãƒ•ã‚¡ã‚¤ãƒ«ã®æœ«ç«¯ã¾ã§ãƒ«ãƒ¼ãƒ—
 	while (!file.eof())
 	{
 		OBJVertex tmp_vert(0.0, 0.0, 0.0);
@@ -192,91 +192,91 @@ bool OBJMesh::LoadOBJFile(const char *filename)
 		OBJFace tmp_face;
 		float tmp_float = 0.0;
 
-		//@1s“Ç‚İæ‚è
+		//ã€€1è¡Œèª­ã¿å–ã‚Š
 		file.getline(buf, sizeof(buf));
 
-		//@ƒoƒbƒtƒ@‚Ì1•¶š–Ú‚Å”»•Ê
+		//ã€€ãƒãƒƒãƒ•ã‚¡ã®1æ–‡å­—ç›®ã§åˆ¤åˆ¥
 		switch (buf[0])
 		{
 		case 'v':
-			//@ƒoƒbƒtƒ@‚Ì2•¶š–Ú‚Å”»•Ê
+			//ã€€ãƒãƒƒãƒ•ã‚¡ã®2æ–‡å­—ç›®ã§åˆ¤åˆ¥
 			switch (buf[1])
 			{
-				//@Vertex
+				//ã€€Vertex
 			case ' ':
-				//@’¸“_À•W‚ğ“Ç‚İæ‚è
+				//ã€€é ‚ç‚¹åº§æ¨™ã‚’èª­ã¿å–ã‚Š
 				if (sscanf(buf + 2, "%f %f %f %f", &tmp_vert.x, &tmp_vert.y, &tmp_vert.z, &tmp_float) != 4)
 				{
 					if (sscanf(buf + 2, "%f %f %f", &tmp_vert.x, &tmp_vert.y, &tmp_vert.z) != 3)
 					{
-						cout << "Error : ’¸“_À•W‚Ì”‚ª•s³‚Å‚·\n";
+						cout << "Error : é ‚ç‚¹åº§æ¨™ã®æ•°ãŒä¸æ­£ã§ã™\n";
 						return false;
 					}
 				}
-				//@‰Šú’l‚Ìİ’è
+				//ã€€åˆæœŸå€¤ã®è¨­å®š
 				if (!size_flag)
 				{
 					min_size = tmp_vert.x;
 					max_size = tmp_vert.x;
 					size_flag = true;
 				}
-				//@Å‘åEÅ¬‚Ì”äŠr
+				//ã€€æœ€å¤§ãƒ»æœ€å°ã®æ¯”è¼ƒ
 				for (int i = 0; i<3; i++)
 				{
 					if (min_size > tmp_vert.v[i]) min_size = tmp_vert.v[i];
 					if (max_size < tmp_vert.v[i]) max_size = tmp_vert.v[i];
 				}
-				//@’¸“_À•W‚ğ’Ç‰Á
+				//ã€€é ‚ç‚¹åº§æ¨™ã‚’è¿½åŠ 
 				AddVertex(tmp_vert);
 				break;
 
-				//@Normal
+				//ã€€Normal
 			case 'n':
-				//@–@üƒxƒNƒgƒ‹‚Ì“Ç‚İæ‚è
+				//ã€€æ³•ç·šãƒ™ã‚¯ãƒˆãƒ«ã®èª­ã¿å–ã‚Š
 				if (sscanf(buf + 2, "%f %f %f", &tmp_norm.x, &tmp_norm.y, &tmp_norm.z) != 3)
 				{
-					cout << "Error : –@üƒxƒNƒgƒ‹‚Ì”‚ª•s³‚Å‚·\n";
+					cout << "Error : æ³•ç·šãƒ™ã‚¯ãƒˆãƒ«ã®æ•°ãŒä¸æ­£ã§ã™\n";
 					return false;
 				}
-				//@–@üƒxƒNƒgƒ‹‚ğ’Ç‰Á
+				//ã€€æ³•ç·šãƒ™ã‚¯ãƒˆãƒ«ã‚’è¿½åŠ 
 				AddNormal(tmp_norm);
 				break;
 			}
 			break;
 
-			//@face
+			//ã€€face
 		case 'f':
 			pbuf = buf;
-			//@‹ó”’‚Ì”‚Å—v‘f”‚ª‚¢‚­‚Â‚ ‚é‚©ƒJƒEƒ“ƒg
+			//ã€€ç©ºç™½ã®æ•°ã§è¦ç´ æ•°ãŒã„ãã¤ã‚ã‚‹ã‹ã‚«ã‚¦ãƒ³ãƒˆ
 			while (*pbuf)
 			{
 				if (*pbuf == ' ') tmp_face.element++;
 				pbuf++;
 			}
-			//@—v‘f”3–¢–‚È‚ç–Ê‚ğ\¬‚Å‚«‚È‚¢
+			//ã€€è¦ç´ æ•°3æœªæº€ãªã‚‰é¢ã‚’æ§‹æˆã§ããªã„
 			if (tmp_face.element < 3)
 			{
-				cout << "Error : –Ê‚ğ\¬‚·‚é‚½‚ß‚Ì—v‘f”‚ª•s³‚Å‚·\n";
+				cout << "Error : é¢ã‚’æ§‹æˆã™ã‚‹ãŸã‚ã®è¦ç´ æ•°ãŒä¸æ­£ã§ã™\n";
 				return false;
 			}
 			switch (tmp_face.element)
 			{
-				//@OŠpŒ`
+				//ã€€ä¸‰è§’å½¢
 			case 3:
 				tmp_face.type = GL_TRIANGLES;
 				break;
 
-				//@lŠpŒ`
+				//ã€€å››è§’å½¢
 			case 4:
 				tmp_face.type = GL_QUADS;
 				break;
 
-				//@‘½ŠpŒ`
+				//ã€€å¤šè§’å½¢
 			default:
 				tmp_face.type = GL_POLYGON;
 				break;
 			}
-			//@ƒCƒ“ƒfƒbƒNƒX—p‚Ìƒƒ‚ƒŠ‚ğŠm•Û
+			//ã€€ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ç”¨ã®ãƒ¡ãƒ¢ãƒªã‚’ç¢ºä¿
 			tmp_face.vertex_index = new int[tmp_face.element];
 			tmp_face.normal_index = new int[tmp_face.element];
 			pbuf = buf;
@@ -285,7 +285,7 @@ bool OBJMesh::LoadOBJFile(const char *filename)
 				pbuf = strchr(pbuf, ' ');
 				pbuf++;
 
-				//@\¬—v‘f‚Ì“Ç‚İæ‚è
+				//ã€€æ§‹æˆè¦ç´ ã®èª­ã¿å–ã‚Š
 				if (sscanf(pbuf, "%d/%d/%d", &tmp_face.vertex_index[i], &tmp_float, &tmp_face.normal_index[i]) != 3)
 				{
 					if (sscanf(pbuf, "%d//%d", &tmp_face.vertex_index[i], &tmp_face.normal_index[i]) != 2)
@@ -309,39 +309,39 @@ bool OBJMesh::LoadOBJFile(const char *filename)
 				{
 					tmp_face.use_normal = true;
 				}
-				//@”z—ñ‚Ì”Ô†‚Æ‡‚í‚¹‚é
+				//ã€€é…åˆ—ã®ç•ªå·ã¨åˆã‚ã›ã‚‹
 				tmp_face.vertex_index[i]--;
 				if (tmp_face.use_normal) tmp_face.normal_index[i]--;
 			}
-			//@ƒ}ƒeƒŠƒAƒ‹ƒCƒ“ƒfƒbƒNƒX‚ğŠi”[
+			//ã€€ãƒãƒ†ãƒªã‚¢ãƒ«ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’æ ¼ç´
 			tmp_face.material_index = cmi;
-			//@–Ê‚ğ’Ç‰Á
+			//ã€€é¢ã‚’è¿½åŠ 
 			AddFace(tmp_face);
 			break;
 
-			//@usemtl
+			//ã€€usemtl
 			/*
 		case 'u':
-			//@ƒ}ƒeƒŠƒAƒ‹–¼‚ğ“Ç‚İæ‚è
+			//ã€€ãƒãƒ†ãƒªã‚¢ãƒ«åã‚’èª­ã¿å–ã‚Š
 			strcpy(tmp_char, " ");
 			sscanf(buf, "usemtl %s", &tmp_char);
-			//@ƒ}ƒeƒŠƒAƒ‹–¼‚©‚çŒŸõ
+			//ã€€ãƒãƒ†ãƒªã‚¢ãƒ«åã‹ã‚‰æ¤œç´¢
 			for (int i = 0; i<num_material; i++)
 			{
-				//@–¼‘O‚ªˆê’v‚µ‚½‚çƒ}ƒeƒŠƒAƒ‹”Ô†‚ğŠi”[
+				//ã€€åå‰ãŒä¸€è‡´ã—ãŸã‚‰ãƒãƒ†ãƒªã‚¢ãƒ«ç•ªå·ã‚’æ ¼ç´
 				if (strcmpi(material[i].name, tmp_char) == 0) cmi = i;
 			}
 			break;
 			*/
-			//@mtllib
+			//ã€€mtllib
 			/*
 		case 'm':
-			//@ƒ}ƒeƒŠƒAƒ‹ƒtƒ@ƒCƒ‹–¼‚ğ“Ç‚İæ‚è
+			//ã€€ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«åã‚’èª­ã¿å–ã‚Š
 			strcpy(tmp_char, " ");
 			sscanf(buf, "mtllib %s", &tmp_char);
-			//@ƒ}ƒeƒŠƒAƒ‹ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+			//ã€€ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿
 			if (!LoadMTLFile(
-				SetDirectoryName(tmp_char, directoryName)	//@ƒfƒBƒŒƒNƒgƒŠ‚ğ•t‰Á
+				SetDirectoryName(tmp_char, directoryName)	//ã€€ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’ä»˜åŠ 
 				))
 				return false;
 			break;
@@ -352,10 +352,10 @@ bool OBJMesh::LoadOBJFile(const char *filename)
 		}
 	}
 
-	//@ƒTƒCƒY’²®—p•Ï”
+	//ã€€ã‚µã‚¤ã‚ºèª¿æ•´ç”¨å¤‰æ•°
 	size = max_size - min_size;
 
-	//@ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+	//ã€€ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 	file.close();
 
 	return true;
@@ -363,8 +363,8 @@ bool OBJMesh::LoadOBJFile(const char *filename)
 /*
 
 //-------------------------------------------------------------------------------------------------
-//@@LoadMTLFile
-//@@Desc : MTLƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+//ã€€ã€€LoadMTLFile
+//ã€€ã€€Desc : MTLãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿
 //-------------------------------------------------------------------------------------------------
 bool OBJMesh::LoadMTLFile(const char *filename)
 {
@@ -374,57 +374,57 @@ bool OBJMesh::LoadMTLFile(const char *filename)
 	float tmp_float = 0.0f;
 	OBJMaterial tmp_mat;
 
-	//@ƒ}ƒeƒŠƒAƒ‹ƒtƒ@ƒCƒ‹–¼‚ğƒRƒs[
+	//ã€€ãƒãƒ†ãƒªã‚¢ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«åã‚’ã‚³ãƒ”ãƒ¼
 	strcpy(mtlFileName, filename);
 
-	//@ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	//ã€€ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	file.open(filename, ios::in);
 	if (!file.is_open())
 	{
-		cout << "Error : w’è‚³‚ê‚½MTLƒtƒ@ƒCƒ‹‚ªŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½\n";
+		cout << "Error : æŒ‡å®šã•ã‚ŒãŸMTLãƒ•ã‚¡ã‚¤ãƒ«ãŒé–‹ã‘ã¾ã›ã‚“ã§ã—ãŸ\n";
 		cout << "File Name : " << filename << endl;
 		return false;
 	}
 
-	//@ƒtƒ@ƒCƒ‹‚Ì––’[‚Ü‚Åƒ‹[ƒv
+	//ã€€ãƒ•ã‚¡ã‚¤ãƒ«ã®æœ«ç«¯ã¾ã§ãƒ«ãƒ¼ãƒ—
 	while (!file.eof())
 	{
-		//@1s“Ç‚İæ‚è
+		//ã€€1è¡Œèª­ã¿å–ã‚Š
 		file.getline(buf, sizeof(buf));
 
-		//@ƒoƒbƒtƒ@‚Ì1•¶š–Ú‚Å”»’f
+		//ã€€ãƒãƒƒãƒ•ã‚¡ã®1æ–‡å­—ç›®ã§åˆ¤æ–­
 		switch (buf[0])
 		{
-			//@newmtl
+			//ã€€newmtl
 		case 'n':
 			cmi++;
 			if (cmi != 0) AddMaterial(tmp_mat);
 			sscanf(buf, "newmtl %s", tmp_mat.name);
 			break;
 
-			//@Ka, Kd, Ks
+			//ã€€Ka, Kd, Ks
 		case 'K':
 			switch (buf[1])
 			{
-				//@Ambient
+				//ã€€Ambient
 			case 'a':
 				sscanf(buf, "Ka %f %f %f", &tmp_mat.ambient.r, &tmp_mat.ambient.g, &tmp_mat.ambient.b);
 				tmp_mat.color = tmp_mat.diffuse;
 				break;
 
-				//@Diffuse
+				//ã€€Diffuse
 			case 'd':
 				sscanf(buf, "Kd %f %f %f", &tmp_mat.diffuse.r, &tmp_mat.diffuse.g, &tmp_mat.diffuse.b);
 				break;
 
-				//@Specular
+				//ã€€Specular
 			case 's':
 				sscanf(buf, "Ks %f %f %f", &tmp_mat.specular.r, &tmp_mat.specular.g, &tmp_mat.specular.b);
 				break;
 			}
 			break;
 
-			//@d
+			//ã€€d
 		case 'd':
 			if (sscanf(buf, "d %f", &tmp_float) == 1)
 			{
@@ -436,7 +436,7 @@ bool OBJMesh::LoadMTLFile(const char *filename)
 			}
 			break;
 
-			//@Tr
+			//ã€€Tr
 		case 'T':
 			if (buf[1] == 'r')
 			{
@@ -444,7 +444,7 @@ bool OBJMesh::LoadMTLFile(const char *filename)
 			}
 			break;
 
-			//@Ni
+			//ã€€Ni
 		case 'N':
 			if (buf[1] == 'i')
 			{
@@ -452,16 +452,16 @@ bool OBJMesh::LoadMTLFile(const char *filename)
 			}
 			break;
 
-			//@ŠY“–‚È‚µ
+			//ã€€è©²å½“ãªã—
 		default:
 			break;
 		}
 	}
 
-	//@ÅŒã‚É“Ç‚İ‚Æ‚Á‚½ƒ}ƒeƒŠƒAƒ‹‚ğ’Ç‰Á
+	//ã€€æœ€å¾Œã«èª­ã¿ã¨ã£ãŸãƒãƒ†ãƒªã‚¢ãƒ«ã‚’è¿½åŠ 
 	AddMaterial(tmp_mat);
 
-	//@ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+	//ã€€ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 	file.close();
 
 	return true;
@@ -469,32 +469,32 @@ bool OBJMesh::LoadMTLFile(const char *filename)
 */
 
 //-------------------------------------------------------------------------------------------------
-//@@Load
-//@@Desc : ƒtƒ@ƒCƒ‹‚Ìƒ[ƒh
+//ã€€ã€€Load
+//ã€€ã€€Desc : ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ­ãƒ¼ãƒ‰
 //-------------------------------------------------------------------------------------------------
 bool OBJMesh::Load(const char *objfilename)
 {
-	//@
+	//ã€€
 	Release();
 
-	//@ˆê“xƒƒ‚ƒŠ‚ğŠm•Û
+	//ã€€ä¸€åº¦ãƒ¡ãƒ¢ãƒªã‚’ç¢ºä¿
 	vertex = (OBJVertex*)malloc(1 * sizeof(OBJVertex));
 	normal = (OBJVertex*)malloc(1 * sizeof(OBJVertex));
 	face = (OBJFace*)malloc(1 * sizeof(OBJFace));
 	//material = (OBJMaterial*)malloc(1 * sizeof(OBJMaterial));
 
-	//@ƒfƒBƒŒƒNƒgƒŠ‚ğØ‚è”²‚«
+	//ã€€ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’åˆ‡ã‚ŠæŠœã
 	GetDirectoryName(objfilename, directoryName);
 
-	//@OBJƒtƒ@ƒCƒ‹‚Ìƒ[ƒh
+	//ã€€OBJãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ­ãƒ¼ãƒ‰
 	if (!LoadOBJFile(objfilename)) return false;
 
 	return true;
 }
 
 //-------------------------------------------------------------------------------------------------
-//@@Render
-//@@Desc : •`‰æˆ—
+//ã€€ã€€Render
+//ã€€ã€€Desc : æç”»å‡¦ç†
 //-------------------------------------------------------------------------------------------------
 void OBJMesh::Render(float scale)
 {
@@ -506,73 +506,73 @@ void OBJMesh::Render(float scale)
 	GLfloat specular[] = { 0.2f, 0.2f, 0.2f, 1.0f };
 	GLfloat shininess =  20.0f ;
 
-	//@Object Color
+	//ã€€Object Color
 	//glColor4fv(material[cur_mat].color);
 
-	//@Ambient Color
+	//ã€€Ambient Color
 	glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
 
-	//@Diffuse Color
+	//ã€€Diffuse Color
 	glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
 
-	//@Specular Color
+	//ã€€Specular Color
 	glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
 
-	//@Shininess
+	//ã€€Shininess
 	glMaterialf(GL_FRONT, GL_SHININESS, shininess);
 
 	for (int i = 0; i<num_face; i++)
 	{
 		/*
-		//@ƒ}ƒeƒŠƒAƒ‹‚ª‚ ‚é‚Æ‚«
+		//ã€€ãƒãƒ†ãƒªã‚¢ãƒ«ãŒã‚ã‚‹ã¨ã
 		if (num_material > 0)
 		{
-			//@ƒCƒ“ƒfƒbƒNƒX‚ğŠi”[
+			//ã€€ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’æ ¼ç´
 			cur_mat = face[i].material_index;
 
-			//@‘O‚ÆˆÙ‚È‚éF‚Ì‚Æ‚«
+			//ã€€å‰ã¨ç•°ãªã‚‹è‰²ã®ã¨ã
 			if (pre_mat != cur_mat)
 			{
-				//@Object Color
+				//ã€€Object Color
 				glColor4fv(material[cur_mat].color);
 
-				//@Ambient Color
+				//ã€€Ambient Color
 				glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, material[cur_mat].ambient);
 
-				//@Diffuse Color
+				//ã€€Diffuse Color
 				glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, material[cur_mat].diffuse);
 
-				//@Specular Color
+				//ã€€Specular Color
 				glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, material[cur_mat].specular);
 
-				//@Emission
+				//ã€€Emission
 				glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, material[cur_mat].emission);
 
-				//@Shininess
+				//ã€€Shininess
 				glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, material[cur_mat].shininess);
 
-				//@XV
+				//ã€€æ›´æ–°
 				pre_mat = cur_mat;
 			}
 		}
 		*/
 
-		//@–Ê‚Ì•`‰æ‚ğŠJn
+		//ã€€é¢ã®æç”»ã‚’é–‹å§‹
 		glBegin(face[i].type);
 		for (int j = 0; j<face[i].element; j++)
 		{
-			//@–@üƒxƒNƒgƒ‹
+			//ã€€æ³•ç·šãƒ™ã‚¯ãƒˆãƒ«
 			if (face[i].use_normal) glNormal3fv(normal[face[i].normal_index[j]]);
 
-			//@’¸“_
+			//ã€€é ‚ç‚¹
 			glVertex3fv(vertex[face[i].vertex_index[j]] * scale);
 			//glVertex3fv(vertex[face[i].vertex_index[j]] * scale / size);
 		}
-		//@–Ê‚Ì•`‰æ‚ğI—¹
+		//ã€€é¢ã®æç”»ã‚’çµ‚äº†
 		glEnd();
 	}
 
-		//@x²³
+		//ã€€xè»¸æ­£
 
 	GLfloat axisColor_Red[4] = { 1.0, 0.0, 0.0, 1.0 };
 	GLfloat axisColor_Blue[4] = { 0.0, 0.0, 1.0, 1.0 };
@@ -588,7 +588,7 @@ void OBJMesh::Render(float scale)
 	//drawDisk();
 	glPopMatrix();
 
-	//@y²³
+	//ã€€yè»¸æ­£
 	glPushMatrix();
 	glColor4fv(axisColor_Green);
 	glMaterialfv(GL_FRONT, GL_AMBIENT, axisColor_Green);
@@ -600,7 +600,7 @@ void OBJMesh::Render(float scale)
 	//drawDisk();
 	glPopMatrix();
 
-	//@z²³
+	//ã€€zè»¸æ­£
 	glPushMatrix();
 	glColor4fv(axisColor_Blue);
 	glMaterialfv(GL_FRONT, GL_AMBIENT, axisColor_Blue);
@@ -615,23 +615,23 @@ void OBJMesh::Render(float scale)
 }
 
 //--------------------------------------------------------------------------------------------------
-//@@MakeDisplayList
-//@@Desc : ƒfƒBƒXƒvƒŒƒCƒŠƒXƒg‚ğì¬
+//ã€€ã€€MakeDisplayList
+//ã€€ã€€Desc : ãƒ‡ã‚£ã‚¹ãƒ—ãƒ¬ã‚¤ãƒªã‚¹ãƒˆã‚’ä½œæˆ
 //--------------------------------------------------------------------------------------------------
 GLuint OBJMesh::MakeDisplayList(float scale)
 {
-	//@ƒŠƒXƒgID‚ğ¶¬
+	//ã€€ãƒªã‚¹ãƒˆIDã‚’ç”Ÿæˆ
 	listID = glGenLists(1);
 
-	//@ƒfƒBƒXƒvƒŒƒCƒŠƒXƒg‚Ìì¬ŠJn
+	//ã€€ãƒ‡ã‚£ã‚¹ãƒ—ãƒ¬ã‚¤ãƒªã‚¹ãƒˆã®ä½œæˆé–‹å§‹
 	glNewList(listID, GL_COMPILE);
 
-	//@•`‰æ
+	//ã€€æç”»
 	Render(scale);
 
-	//@ƒfƒBƒXƒvƒŒƒCƒŠƒXƒg‚Ìì¬I—¹
+	//ã€€ãƒ‡ã‚£ã‚¹ãƒ—ãƒ¬ã‚¤ãƒªã‚¹ãƒˆã®ä½œæˆçµ‚äº†
 	glEndList();
 
-	//@ƒŠƒXƒgID‚ğ•Ô‚·
+	//ã€€ãƒªã‚¹ãƒˆIDã‚’è¿”ã™
 	return listID;
 }
