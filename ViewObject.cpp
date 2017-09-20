@@ -4,6 +4,7 @@
 #include "Mouse.h"
 #include "OBJLoader.h"
 #include "XMLLoader.h"
+#include "Line.h"
 using namespace std;
 
 int WindowPositionX = 100;
@@ -105,7 +106,6 @@ void Initialize(char* object_filename, char* optics_filename, char* projector_pa
 	mesh.Information();
 
 	::proj.set(projector_param);
-	std::cout << ::proj.pixel_h << std::endl;
 }
 
 //---------------------------------------------------------------------------------------------------
